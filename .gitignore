@@ -1,0 +1,11 @@
+main.exe
+# Ignore everything
+*
+
+# But keep these:
+!.gitignore
+!go.mod
+!go.sum
+!main.go
+!README.md
+!LCENSE
