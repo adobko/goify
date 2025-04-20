@@ -3,9 +3,12 @@ main.exe
 *
 
 # But keep these:
-!.gitignore
+!app/
 !go.mod
 !go.sum
 !main.go
+!.gitignore
+!install_goify.bat
+!install_goify.sh
 !README.md
 !LCENSE
