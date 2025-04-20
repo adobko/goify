@@ -1,4 +1,8 @@
 @echo off
+
+echo Downloading playwright with depenedencies:
+go get -u github.com/playwright-community/playwright-go
+
 echo Compiling Goify...
 go build -o goify.exe ./app
 
@@ -17,10 +21,10 @@ if not exist "%INSTALL_DIR%" (
     mkdir "%INSTALL_DIR%"
 )
 
-echo Moving goify.exe to %INSTALL_DIR%...
+echo Moving goify.exe to '%INSTALL_DIR%'...
 move goify.exe "%INSTALL_DIR%"
 
-echo Adding %INSTALL_DIR% to PATH...
+echo Adding '%INSTALL_DIR%' to PATH...
 setx PATH "%PATH%;%INSTALL_DIR%"
 
 if %ERRORLEVEL% neq 0 (
@@ -30,4 +34,5 @@ if %ERRORLEVEL% neq 0 (
 )
 
 echo Installation complete. Goify is ready to use from the terminal!
+echo If the goify command isn't recognized after restarting cmd, you may need to add '%INSTALL_DIR%' to path manually
 pause
