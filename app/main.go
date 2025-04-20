@@ -321,6 +321,7 @@ func resolveList(browser playwright.Browser, options *Options) {
 	sem := make(chan struct{}, options.MaxWorkers)
 	total := len(links)
 	awaiting := total
+	displayProgressBar(0, total)
 	var wg sync.WaitGroup
 	wg.Add(total)
 	for _, link := range links {
